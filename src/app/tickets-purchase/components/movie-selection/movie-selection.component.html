@@ -1,8 +1,0 @@
-<div class="container px-1 px-md-4 pt-4 pb-4">
-    <h3 class="mb-3 fw-bold icon-color"> <i class="bi bi-film me-1"> </i> Movie Selection </h3>
-    <hr class="border border-secondary mb-5">
-
-    <ng-container *ngFor="let movieData of ticketsAvailabilityService.movieDataList; let i = index">
-        <app-movie-data [movieData]="movieData" [movieShowTimes]="ticketsAvailabilityService.moviesShowTimesData[i]"> </app-movie-data>
-    </ng-container>
-</div>
