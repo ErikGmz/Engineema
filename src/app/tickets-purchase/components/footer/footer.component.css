@@ -1,0 +1,11 @@
+.footer-background {
+    background-color: rgb(175, 35, 35);
+}
+
+.footer-title {
+    cursor: default;
+}
+
+.footer-text-color {
+    color: var(--bs-light) !important;
+}

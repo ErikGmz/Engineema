@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="row g-0">
+        <div class="col-12 pb-0 px-3 pt-4 d-flex justify-content-center">
+            <img [src]="showTimeData.imageSrc" class="img-fluid rounded-2" alt="Movie image" width="150" height="220">
+        </div>
+
+        <div class="col-12">
+            <div class="card-body h-100 py-4 d-flex flex-column">
+                <h5 class="card-title"> {{showTimeData.title}} </h5>
+                <p class="card-text mb-0"> {{showTimeData.description}} </p>
+
+                <div class="mb-2">
+                    <div class="pt-2 d-inline-block">
+                        <app-showtime [movieIndex]="showTimeData.index" [showTime]="showTimeData.showTimes[0]" [selectionBehavior]="false" [availableTickets]="true" class="me-2"> </app-showtime>
+                    </div>
+                </div>
+
+                <p class="card-text d-flex justify-content-end mt-auto"> 
+                    <small class="text-body-secondary fs-5"> 
+                        <span class="badge time-icon-background py-2"> <i class="bi bi-clock me-1"> </i> {{showTimeData.duration}} </span> 
+                    </small> 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

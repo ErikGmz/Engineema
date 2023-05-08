@@ -1,0 +1,23 @@
+.navbar-background {
+    background-color: rgb(168, 13, 13);
+}
+
+.navbar-title {
+    cursor: default;
+}
+
+.nav-link-color {
+    color: var(--bs-navbar-color) !important;
+}
+
+.nav-link-color:hover {
+    color: var(--bs-navbar-hover-color) !important;
+}
+
+.nav-link-color.disabled {
+    color: var(--bs-navbar-disabled-color) !important;
+}
+
+.nav-link-color.active {
+    color: var(--bs-navbar-active-color) !important;
+}
