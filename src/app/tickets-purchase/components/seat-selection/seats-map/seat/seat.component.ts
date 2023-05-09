@@ -15,6 +15,7 @@ export class SeatComponent implements OnInit {
     seatCoordinate: "",
     seatState: ""
   }
+  @Input() showTime: string = "";
 
   sweetAlertSuccessfulTemplate: any = {
     title: 'Successful ticket purchase!',
@@ -52,7 +53,7 @@ export class SeatComponent implements OnInit {
       + "<p style='line-height: 2.5' class='mb-0'> <span class='badge fs-6 py-2' style='background-color: rgb(168, 13, 13)'> <i class='bi bi-film me-1'> </i> Movie title </span> "
       + "<span class='badge fs-6 py-1 lh-base text-wrap' style='background-color: rgb(168, 13, 13)'>" + movieData.title + "</span> </p>"
       + "<p style='line-height: 2.5' class='mb-0'> <span class='badge fs-6 py-2' style='background-color: rgb(255, 116, 23)'> <i class='bi bi-ticket-perforated me-1'> </i> Showtime </span> "
-      + "<span class='badge fs-6 py-2' style='background-color: rgb(255, 116, 23)'>" + movieData.showTimes[0] + "</span> </p>"
+      + "<span class='badge fs-6 py-2' style='background-color: rgb(255, 116, 23)'>" + this.showTime + "</span> </p>"
       + "<p class='mb-0' style='line-height: 2.5'> <span class='badge fs-6 py-2' style='background-color: rgb(13, 110, 253)'> <i class='bi bi-geo-fill me-1'> </i> Seat coordinate </span> "
       + "<span class='badge fs-6 py-2' style='background-color: rgb(13, 110, 253)'>" + this.showTimeSeatData.seatCoordinate + "</span> </p>"
       ,
