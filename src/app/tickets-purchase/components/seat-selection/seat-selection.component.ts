@@ -24,7 +24,7 @@ export class SeatSelectionComponent implements OnInit {
     freeTickets: 0
   }
 
-  constructor(public ticketsAvailabilityService: TicketsAvailabilityService) { 
+  constructor(public ticketsAvailabilityService: TicketsAvailabilityService) {
     //Generate movie selection information template.
     let selectedMovieIndex = ticketsAvailabilityService.selectedShowTime.movieIndex;
     let selectedShowTime = ticketsAvailabilityService.selectedShowTime.showTime;
@@ -33,10 +33,10 @@ export class SeatSelectionComponent implements OnInit {
     this.movieData.showTimes = Array.of(selectedShowTime);
 
     //Load all the selected showtime seats map information.
-    this.showTimeData.showTime = Object.assign({}, selectedShowTime);
-    this.showTimeData.seatsStatesMap = ticketsAvailabilityService.moviesShowTimesData[selectedMovieIndex].showTimes.find(value => value.showTime == selectedShowTime)?.seatsStatesMap || [];
+    this.showTimeData.showTime = selectedShowTime;
+    this.showTimeData.seatsStatesMap = Object.assign([], ticketsAvailabilityService.moviesShowTimesData[selectedMovieIndex].showTimes.find(value => value.showTime == selectedShowTime)?.seatsStatesMap || []);
     this.showTimeData.freeTickets = ticketsAvailabilityService.moviesShowTimesData[selectedMovieIndex].showTimes.find(value => value.showTime == selectedShowTime)?.freeTickets || 0;
-  }
+  }  
 
   ngOnInit(): void {
   }

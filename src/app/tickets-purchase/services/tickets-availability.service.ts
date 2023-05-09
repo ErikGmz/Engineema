@@ -1,4 +1,5 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { deepCopy } from '@angular-devkit/core/src/utils/object';
 import { MovieData } from '../models/movie-data';
 import { ShowTimeData } from '../models/showtime-data';
 import { ShowTimeSelection } from '../models/showtime-selection';
@@ -60,7 +61,7 @@ export class TicketsAvailabilityService {
 
   showTimeData: ShowTimeData = {
     showTime: "",
-    seatsStatesMap: this.showTimeSeatsMap,
+    seatsStatesMap: deepCopy(this.showTimeSeatsMap),
     freeTickets: 12
   }
 
@@ -68,39 +69,39 @@ export class TicketsAvailabilityService {
     {
       index: 0,
       showTimes: [
-        { showTime: "14:30", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "16:15", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "18:30", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
+        { showTime: "14:30", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "16:15", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "18:30", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
       ] 
     },
     {
       index: 1,
       showTimes: [
-        { showTime: "15:00", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "16:30", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets}
+        { showTime: "15:00", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "16:30", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets}
       ] 
     },
     {
       index: 2,
       showTimes: [
-        { showTime: "15:15", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "17:15", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets}
+        { showTime: "15:15", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "17:15", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets}
       ]
     },
     {
       index: 3,
       showTimes: [
-        { showTime: "15:00", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "17:00", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "20:00", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets}
+        { showTime: "15:00", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "17:00", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "20:00", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets}
       ]
     },
     {
       index: 4,
       showTimes: [
-        { showTime: "14:45", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "15:45", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets},
-        { showTime: "17:30", seatsStatesMap: this.showTimeData.seatsStatesMap, freeTickets: this.showTimeData.freeTickets}
+        { showTime: "14:45", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "15:45", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets},
+        { showTime: "17:30", seatsStatesMap: deepCopy(this.showTimeData.seatsStatesMap), freeTickets: this.showTimeData.freeTickets}
       ]
     }
   ];

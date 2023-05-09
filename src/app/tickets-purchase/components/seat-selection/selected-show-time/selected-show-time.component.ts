@@ -16,7 +16,8 @@ export class SelectedShowTimeComponent implements OnInit {
     showTimes: []
   };
   
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

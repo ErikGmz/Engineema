@@ -81,7 +81,7 @@ export class SeatComponent implements OnInit {
         }
         showTimeData.freeTickets--;
 
-        let seatData = showTimeData?.seatsStatesMap.find(value => value.seatCoordinate == this.showTimeSeatData.seatCoordinate) || null
+        let seatData = Object.values(showTimeData.seatsStatesMap).find(value => value.seatCoordinate == this.showTimeSeatData.seatCoordinate) || null
         if(seatData === null) {
           Swal.fire(this.sweetAlertErrorTemplate)
           .then((response) => {
