@@ -1,0 +1,36 @@
+<div class="card p-4">
+    <h5 class="mb-0 fw-bold icon-color"> <i class="bi bi-piggy-bank-fill me-1"> </i> Cash Payment </h5>
+    <hr class="border border-secondary mb-4">
+
+    <form [formGroup]="cashForm" (ngSubmit)="onSubmit()" class="container">
+        <div class="row">
+            <div class="mb-4 col-12">
+                <label for="cash-currency" class="form-label fw-bold"  aria-describedby="cash-currency-help"> 
+                    Cash Currency (*) 
+                </label>
+                <select class="form-select" aria-label="Cash Currency Selection" formControlName="cashCurrency">
+                    <option selected value="dollar"> Dollar </option>
+                    <option value="mxn"> Mexican Peso </option>
+                    <option value="arg"> Argentinian Peso </option>
+                    <option value="col"> Colombian Peso </option>
+                    <option value="eur"> Euro </option>
+                </select>
+                <div id="cash-currency-help" class="form-text"> It's the payment currency. </div>
+            </div>
+
+            <div class="mb-4 col-12">
+                <label for="cash-type" class="form-label fw-bold"  aria-describedby="cash-type-help"> 
+                    Cash Type (*) 
+                </label>
+                <select class="form-select" aria-label="Cash Type Selection" formControlName="cashType">
+                    <option selected value="coins-bills"> Coins and Bills </option>
+                    <option value="coins"> Coins </option>
+                    <option value="bills"> Bills </option>
+                </select>
+                <div id="cash-currency-help" class="form-text"> It's the payment cash type. </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success" [disabled]="cashForm.invalid"> Confirm Cash Payment </button>
+    </form>
+</div>

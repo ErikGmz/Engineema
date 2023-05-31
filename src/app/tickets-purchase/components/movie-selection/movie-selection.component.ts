@@ -10,6 +10,7 @@ export class MovieSelectionComponent implements OnInit {
   constructor(public ticketsAvailabilityService: TicketsAvailabilityService) { }
 
   ngOnInit(): void {
+    this.ticketsAvailabilityService.clearSelectedShowTimeData();
   }
-
+  
 }

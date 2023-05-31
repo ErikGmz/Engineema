@@ -16,8 +16,12 @@
                 </div>
 
                 <p class="card-text d-flex justify-content-end mt-auto"> 
-                    <small class="text-body-secondary fs-5"> 
+                    <small class="text-body-secondary fs-5 mt-2 mt-sm-0"> 
                         <span class="badge time-icon-background py-2"> <i class="bi bi-clock me-1"> </i> {{showTimeData.duration}} </span> 
+                    </small> 
+
+                    <small class="text-body-secondary fs-5 mt-2 mt-sm-0 ms-2"> 
+                        <span class="badge price-icon-background py-2"> <i class="bi bi-cash-stack me-1"> </i> ${{showTimeData.price | number: '1.2' }} </span> 
                     </small> 
                 </p>
             </div>

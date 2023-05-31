@@ -3,12 +3,12 @@
     <hr class="border border-secondary mb-5">
 
     <div class="row px-3">
-        <div class="mb-5 col-12 col-lg-7">
+        <div class="mb-4 col-12 col-lg-7">
             <app-selected-show-time [showTimeData]="movieData"> </app-selected-show-time>
         </div>
 
-        <div class="mb-5 col-12 col-lg-5">
-            <app-seats-map [showTimeData]="showTimeData"> </app-seats-map>
+        <div class="col-12 col-lg-5">
+            <app-seats-map [showTimeData]="showTimeData" [seatSelection]="true"> </app-seats-map>
         </div>
     </div>
 </div>

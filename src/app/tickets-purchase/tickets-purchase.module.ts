@@ -13,6 +13,10 @@ import { SelectedShowTimeComponent } from './components/seat-selection/selected-
 import { SeatsMapComponent } from './components/seat-selection/seats-map/seats-map.component';
 import { SeatComponent } from './components/seat-selection/seats-map/seat/seat.component';
 import { NumberToLetterPipe } from './pipes/number-to-letter.pipe';
+import { PaymentSelectionComponent } from './components/payment-selection/payment-selection.component';
+import { CardPaymentComponent } from './components/payment-selection/card-payment/card-payment.component';
+import { CashPaymentComponent } from './components/payment-selection/cash-payment/cash-payment.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,11 +30,16 @@ import { NumberToLetterPipe } from './pipes/number-to-letter.pipe';
     SelectedShowTimeComponent,
     SeatsMapComponent,
     SeatComponent,
-    NumberToLetterPipe
+    NumberToLetterPipe,
+    PaymentSelectionComponent,
+    CardPaymentComponent,
+    CashPaymentComponent,
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MovieSelectionComponent,

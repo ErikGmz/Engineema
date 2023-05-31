@@ -1,0 +1,47 @@
+<div class="card p-4">
+    <h5 class="mb-0 fw-bold icon-color"> <i class="bi bi-credit-card-2-front-fill me-1"> </i> Card Payment </h5>
+    <hr class="border border-secondary mb-4">
+
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="container">
+        <div class="row">
+            <div class="mb-4 col-12">
+                <label for="card-number" class="form-label fw-bold"> Card Number (*) </label>
+                <input type="password" class="form-control" id="card-number" aria-describedby="card-number-help" 
+                formControlName="cardNumber" autocomplete="OFF" spellcheck="false" placeholder="XXXX-XXXX-XXXX-XXXX"
+                [class.is-invalid]="cardForm.get('cardNumber')?.invalid && (cardForm.get('cardNumber')?.dirty && cardForm.get('cardNumber')?.touched)"
+                [class.is-valid]="!cardForm.get('cardNumber')?.invalid && (cardForm.get('cardNumber')?.dirty && cardForm.get('cardNumber')?.touched)">
+                <div id="card-number-help" class="form-text"> It should be a 16 digits number. </div>
+                <div *ngIf="cardForm.get('cardNumber')?.errors?.['required']" class="invalid-feedback"> The card number is needed. </div>
+                <div *ngIf="cardForm.get('cardNumber')?.errors?.['minlength']" class="invalid-feedback"> The card number must have at least 16 digits. </div>
+                <div *ngIf="cardForm.get('cardNumber')?.errors?.['maxlength']" class="invalid-feedback"> The card number can have up to 16 characters. </div>
+                <div *ngIf="cardForm.get('cardNumber')?.errors?.['pattern']" class="invalid-feedback"> The specified card number is invalid. </div>
+            </div>
+
+            <div class="mb-4 col-12">
+                <label for="card-expiration-date" class="form-label fw-bold"> Card Expiration Date (*) </label>
+                <input type="date" class="form-control" id="card-expiration-date" aria-describedby="card-expiration-date-help" 
+                formControlName="cardExpirationDate" spellcheck="false" placeholder="yyyy-MM-dd" min="{{currentDate | date:'yyyy-MM-dd'}}"
+                [class.is-invalid]="cardForm.get('cardExpirationDate')?.invalid && (cardForm.get('cardExpirationDate')?.dirty && cardForm.get('cardExpirationDate')?.touched)"
+                [class.is-valid]="!cardForm.get('cardExpirationDate')?.invalid && (cardForm.get('cardExpirationDate')?.dirty && cardForm.get('cardExpirationDate')?.touched)">
+                <div id="card-expiration-date-help" class="form-text"> It's the last date on which the card can be used. </div>
+                <div *ngIf="cardForm.get('cardExpirationDate')?.errors?.['required']" class="invalid-feedback"> The card expiration date is needed. </div>
+                <div *ngIf="cardForm.get('cardExpirationDate')?.errors?.['minExpirationDate']" class="invalid-feedback"> The card expiration date must start from the current day. </div>
+            </div>
+
+            <div class="mb-4 col-12">
+                <label for="card-security-code" class="form-label fw-bold"> Card Security Code (*) </label>
+                <input type="password" class="form-control" id="card-security-code" aria-describedby="card-security-code-help" 
+                formControlName="cardSecurityCode" autocomplete="OFF" spellcheck="false" placeholder="CCV"
+                [class.is-invalid]="cardForm.get('cardSecurityCode')?.invalid && (cardForm.get('cardSecurityCode')?.dirty && cardForm.get('cardSecurityCode')?.touched)"
+                [class.is-valid]="!cardForm.get('cardSecurityCode')?.invalid && (cardForm.get('cardSecurityCode')?.dirty && cardForm.get('cardSecurityCode')?.touched)">
+                <div id="card-security-code-help" class="form-text"> It should be a 3 digits number. </div>
+                <div *ngIf="cardForm.get('cardSecurityCode')?.errors?.['required']" class="invalid-feedback"> The card security code is needed. </div>
+                <div *ngIf="cardForm.get('cardSecurityCode')?.errors?.['minlength']" class="invalid-feedback"> The card security code must have at least 3 digits. </div>
+                <div *ngIf="cardForm.get('cardSecurityCode')?.errors?.['maxlength']" class="invalid-feedback"> The card security code can have up to 3 digits. </div>
+                <div *ngIf="cardForm.get('cardSecurityCode')?.errors?.['pattern']" class="invalid-feedback"> The specified card security code is invalid. </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success" [disabled]="cardForm.invalid"> Confirm Card Payment </button>
+    </form>
+</div>
