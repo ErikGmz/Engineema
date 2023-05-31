@@ -31,13 +31,25 @@
                 </li>
 
                 <li class="me-lg-2">
-                    <a class="nav-link nav-link-color disabled" routerLink="tickets-purchase/seat-selection" routerLinkActive="active">
+                    <a class="nav-link nav-link-color" routerLink="tickets-purchase/seat-selection" routerLinkActive="active" [ngClass]="ticketsAvailabilityService.selectedShowTimeSeatDataIsValid() ? '' : 'disabled'">
                         <div class="d-block mx-auto text-center">
                             <i class="bi bi-geo-fill fs-4"> </i>
                         </div>
 
                         <div class="text-center">
                             <span class="fw-semibold"> Seat Selection </span>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="me-lg-2">
+                    <a class="nav-link nav-link-color disabled" routerLink="tickets-purchase/payment-selection" routerLinkActive="active">
+                        <div class="d-block mx-auto text-center">
+                            <i class="bi bi-credit-card-2-back-fill fs-4"></i>
+                        </div>
+
+                        <div class="text-center">
+                            <span class="fw-semibold"> Payment Selection </span>
                         </div>
                     </a>
                 </li>

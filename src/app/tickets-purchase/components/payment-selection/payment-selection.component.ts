@@ -4,11 +4,11 @@ import { MovieData } from '../../models/movie-data';
 import { ShowTimeData } from '../../models/showtime-data';
 
 @Component({
-  selector: 'app-seat-selection',
-  templateUrl: './seat-selection.component.html',
-  styleUrls: ['./seat-selection.component.css']
+  selector: 'app-payment-selection',
+  templateUrl: './payment-selection.component.html',
+  styleUrls: ['./payment-selection.component.css']
 })
-export class SeatSelectionComponent implements OnInit {
+export class PaymentSelectionComponent implements OnInit {
   movieData: MovieData = {
     index: -1,
     title: '',
@@ -37,10 +37,8 @@ export class SeatSelectionComponent implements OnInit {
     this.showTimeData.showTime = selectedShowTime;
     this.showTimeData.seatsStatesMap = Object.assign([], ticketsAvailabilityService.moviesShowTimesData[selectedMovieIndex].showTimes.find(value => value.showTime == selectedShowTime)?.seatsStatesMap || []);
     this.showTimeData.freeTickets = ticketsAvailabilityService.moviesShowTimesData[selectedMovieIndex].showTimes.find(value => value.showTime == selectedShowTime)?.freeTickets || 0;
-  }  
+  }
 
   ngOnInit(): void {
-    this.ticketsAvailabilityService.clearSelectedSeatData();
   }
-  
 }

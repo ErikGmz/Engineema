@@ -1,4 +1,4 @@
 export type ShowTimeSeat = {
-    seatCoordinate: string,
+    seatCoordinates: string,
     seatState: string
 }

@@ -5,3 +5,7 @@
 .coordinate-background {
     background-color: rgb(168, 13, 13);    
 }
+
+.unselected-color {
+    background-color: rgb(211, 95, 29);
+}

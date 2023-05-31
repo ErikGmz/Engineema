@@ -21,3 +21,7 @@
 .selected-color {
     fill: rgb(13, 110, 253);
 }
+
+.unselected-color {
+    fill: rgb(211, 95, 29);
+}

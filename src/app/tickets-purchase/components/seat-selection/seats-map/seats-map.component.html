@@ -2,23 +2,33 @@
     <div class="row g-0">
         <div class="col-12 d-flex justify-content-center mb-2 ">
             <div class="d-flex flex-wrap justify-content-center align-items-center mb-3">
-                <div class="px-3 px-sm-0 px-lg-3 px-xl-0">
-                    <p class="me-sm-4 me-lg-0 me-xl-4 text-center fw-bold fs-6 badge bg-success py-2 py-sm-3">
-                        <i class="bi bi-person-fill-check me-1 d-block d-sm-inline-block mb-1 mb-sm-0"> </i> Available
-                    </p>
-                </div>
+                <ng-container *ngIf="seatSelection else markSelection">
+                    <div class="px-3 px-sm-0 px-lg-3 px-xl-0">
+                        <p class="me-sm-4 me-lg-0 me-xl-4 text-center fw-bold fs-6 badge bg-success py-2 py-sm-3">
+                            <i class="bi bi-person-fill-check me-1 d-block d-sm-inline-block mb-1 mb-sm-0"> </i> Available
+                        </p>
+                    </div>
+
+                    <div class="px-3 px-sm-0 px-lg-3 px-xl-0">
+                        <p class="me-sm-4 me-lg-0 me-xl-4 text-center fw-bold fs-6 badge bg-danger py-2 py-sm-3">
+                            <i class="bi bi-person-fill-slash me-1 d-block d-sm-inline-block mb-1 mb-sm-0"> </i> Occupied
+                        </p>
+                    </div>
+                </ng-container>        
                 
-                <div class="px-3 px-sm-0 px-lg-3 px-xl-0">
-                    <p class="me-sm-4 me-lg-0 me-xl-4 text-center fw-bold fs-6 badge bg-danger py-2 py-sm-3">
-                        <i class="bi bi-person-fill-slash me-1 d-block d-sm-inline-block mb-1 mb-sm-0"> </i> Occupied
-                    </p>
-                </div>
-                
-                <div class="px-3 px-sm-0 px-lg-3 px-xl-0">
-                    <p class="me-sm-4 me-lg-0 me-xl-4 text-center fw-bold fs-6 badge bg-primary py-2 py-sm-3">
-                        <i class="bi bi-person-fill-dash me-1 d-block d-sm-inline-block mb-1 mb-sm-0"> </i> Selected
-                    </p>
-                </div>
+                <ng-template #markSelection>
+                    <div class="px-3 px-sm-0 px-lg-3 px-xl-0">
+                        <p class="me-sm-4 me-lg-0 me-xl-4 text-center fw-bold fs-6 badge unselected-color py-2 py-sm-3">
+                            <i class="bi bi-person-fill-x me-1 d-block d-sm-inline-block mb-1 mb-sm-0"> </i> Unselected
+                        </p>
+                    </div>
+
+                    <div class="px-3 px-sm-0 px-lg-3 px-xl-0">
+                        <p class="me-sm-4 me-lg-0 me-xl-4 text-center fw-bold fs-6 badge bg-primary py-2 py-sm-3">
+                            <i class="bi bi-person-fill-dash me-1 d-block d-sm-inline-block mb-1 mb-sm-0"> </i> Selected
+                        </p>
+                    </div>
+                </ng-template>
             </div>
         </div>
 
@@ -53,7 +63,8 @@
                         </div>
                     </ng-container>
 
-                    <app-seat [showTimeSeatData]="seat" [showTime]="showTimeData.showTime"> </app-seat>
+                    <app-seat [showTimeSeatData]="seat" [showTime]="showTimeData.showTime" [seatSelection]="seatSelection"
+                    [selectedSeatCoordinates]="selectedSeatCoordinates"> </app-seat>
                 </ng-container>
             </div>
         </div>

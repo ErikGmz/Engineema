@@ -1,4 +1,5 @@
 export type ShowTimeSelection = {
     movieIndex: number,
-    showTime: string
+    showTime: string,
+    seatCoordinates: string
 }

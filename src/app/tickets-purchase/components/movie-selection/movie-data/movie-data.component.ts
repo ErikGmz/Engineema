@@ -14,6 +14,7 @@ export class MovieDataComponent implements OnInit {
     imageSrc: '',
     description: '',
     duration: '',
+    price: 0,
     showTimes: []
   };
 

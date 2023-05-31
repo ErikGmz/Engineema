@@ -12,6 +12,8 @@ export class SeatsMapComponent implements OnInit {
     seatsStatesMap: [],
     freeTickets: 0
   }
+  @Input() seatSelection = false;
+  @Input() selectedSeatCoordinates = "";
 
   constructor() { 
   }
